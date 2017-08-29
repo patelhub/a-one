@@ -23,6 +23,15 @@ export class CandidateComponent implements OnInit {
       this.items = data['dataList'];
     });
   }
+  edit(id) {
+
+  }
+  delete(id) {
+    this.http.delete('https://node-one.herokuapp.com/candidate/' + id).subscribe(data => {
+      console.log(data);
+      this.getList();
+    });
+  }
 
 }
 
