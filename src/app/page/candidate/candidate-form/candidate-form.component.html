@@ -1,0 +1,32 @@
+<div *ngIf="candidateForm" style="width: 50%;">
+  <div class="modal-body">
+    <form [formGroup]="candidateForm" novalidate schemaName="candidate">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" formControlName="firstname">
+        <app-form-error-container
+        [formGroup]="candidateForm" errorFor="firstname" >
+        </app-form-error-container>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" formControlName="lastname">
+        <app-form-error-container
+        [formGroup]="candidateForm" errorFor="lastname" >
+        </app-form-error-container>
+      </div>
+      <div class="form-group">
+        <label>Aadhaar number</label>
+        <input type="number" class="form-control" formControlName="aid">
+        <app-form-error-container
+        [formGroup]="candidateForm" errorFor="aid" >
+        </app-form-error-container>
+      </div>
+    </form>
+    {{candidateForm.value | json}}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn" (click)="save()">Save</button>
+    <a routerLink="candidate" (click)="cancel()">Cancel</a>
+  </div>
+</div>

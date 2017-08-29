@@ -1,0 +1,21 @@
+<div><a  routerLink="form" class="btn pull-right">Add new</a></div>
+<table class="table">
+  <thead>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Aadhaar Number</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{item.firstname}}</td>
+      <td>{{item.lastname}}</td>
+      <td>{{item.aid}}</td>
+      <td><a (click)="edit()">edit</a></td>
+      <td><a (click)="delete()">delete</a></td>
+    </tr>
+  </tbody>
+</table>
